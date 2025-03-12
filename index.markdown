@@ -1,3 +1,3 @@
 ---
-layout: a
+layout: doc
 ---
