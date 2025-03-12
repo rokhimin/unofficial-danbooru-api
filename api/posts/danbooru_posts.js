@@ -3,17 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to get URL parameters
     function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        const results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
     }
     
-    // Get the id parameter from URL
+    // Get the 'id' parameter from URL
     const id = getUrlParameter('id');
     
     if (!id) {
-        output.innerHTML = 'Error: No ID parameter provided. Please use format: index.html?id=12345';
+        output.innerText = JSON.stringify({ error: "No ID parameter provided. Use ?id=12345" }, null, 2);
         return;
     }
     
@@ -26,11 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            // Format JSON with indentation for better readability
-            const formattedJson = JSON.stringify(data, null, 2);
-            output.innerHTML = formattedJson;
+            // Format JSON as plain text (important for API response)
+            output.innerText = JSON.stringify(data, null, 2);
         })
         .catch(error => {
-            output.innerHTML = `Error fetching data: ${error.message}`;
+            output.innerText = JSON.stringify({ error: error.message }, null, 2);
         });
 });
