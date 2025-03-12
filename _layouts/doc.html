@@ -2,5 +2,105 @@
 layout: default
 ---
 
-a
-<script src="{{ site.baseurl }}/assets/xxx.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    h1, h2, h3 {
+        color: #333;
+    }
+    code {
+        background: #eee;
+        padding: 5px;
+        display: block;
+        white-space: pre-wrap;
+    }
+    a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+<h1>ReadMe</h1>
+
+<h2>About</h2>
+<p>Unofficial Danbooru API host in GitHub Pages</p>
+<h2>Usage</h2>
+
+<h3>Get tags</h3>
+<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}</code>
+
+<p>Example, I want to search tag <strong>armpits</strong></p>
+<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits</code>
+
+<p>Output:</p>
+<code>{
+"tag": "armpits",
+"page": 1,
+"count": 19,
+"pagination": {
+"current_page": 1
+},
+"posts": [
+{
+  "id": "8984674",
+  "title": "flora and trina (goddess of victory: nikke) drawn by young999999990",
+  "artist": "young999999990",
+  "image_url": "https://cdn.donmai.us/360x360/07/32/0732128dd2e73ff17018ae27196efa4c.jpg",
+  "sample_image": "https://cdn.donmai.us/sample/07/32/__flora_and_trina_goddess_of_victory_nikke_drawn_by_young999999990__sample-0732128dd2e73ff17018ae27196efa4c.jpg",
+  "original_image": "https://cdn.donmai.us/original/07/32/__flora_and_trina_goddess_of_victory_nikke_drawn_by_young999999990__0732128dd2e73ff17018ae27196efa4c.jpg",
+  "page_url": "https://danbooru.donmai.us/posts/8984674",
+  "published": "",
+  "updated": "2025-03-12T10:19:26Z",
+  "tags": ["armpits"]
+}
+]
+}</code>
+
+<h3>Get pages</h3>
+<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}&page={number}</code>
+
+<p>Example, search tag <strong>armpits</strong> and page <strong>2</strong>:</p>
+<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits&page=2</code>
+
+<h3>Get posts</h3>
+<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id={number id}</code>
+
+<p>Example:</p>
+<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id=1182530</code>
+
+<p>Output:</p>
+<code>{
+"id": 8984674,
+"created_at": "2025-03-12T06:19:26.600-04:00",
+"uploader_id": 1182530,
+"score": 6,
+"source": "https://twitter.com/young999999990/status/1899733450980307003",
+"md5": "0732128dd2e73ff17018ae27196efa4c",
+"last_comment_bumped_at": null,
+"rating": "q",
+"image_width": 3584,
+"image_height": 4096,
+"tag_string": "2girls :o absurdres animal_on_head armpits bird bird_on_head ...",
+}</code>
+
+<h2>Contributing</h2>
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/rokhimin/unofficial-danbooru-api/">GitHub Repo</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="https://www.contributor-covenant.org/">Contributor Covenant</a> code of conduct.</p>
+
+<h2>Development</h2>
+<p>To set up your environment, run:</p>
+<code>bundle install</code>
+
+<p>Your setup just like a normal Jekyll site! To test your theme, run:</p>
+<code>bundle exec jekyll serve</code>
+<p>and open your browser at <code>http://localhost:4000</code>. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test contents.</p>
+
+<h2>License</h2>
+<p>Available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>

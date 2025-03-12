@@ -5,23 +5,18 @@ Unofficial danbooru API host in githubpages
 
 https://rokhimin.github.io/unofficial-danbooru-api
 
-### tech use
-- Jekyll
-- Javascript
-- Bulma css 
-
 ### Usage
 
 ##### Get tags
 
 ```
-https://whdzera.site/unofficial-danbooru-api/api?tags={name tag}
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}
 ```
 
 example, I want to search tag armpits
 
 ```
-https://whdzera.site/unofficial-danbooru-api/api?tags=armpits
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits
 ```
 output
 ```
@@ -52,24 +47,29 @@ output
 if you want to search 2 tags, example armpits and ass (max 2 tags)
 
 ```
-https://whdzera.site/unofficial-danbooru-api/api?tags=armpits+ass
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits+ass
 ```
 
 ##### Get pages
 
 ```
-https://whdzera.site/unofficial-danbooru-api/api?tags={name tag}&{number page}
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}&{number page}
 ```
 
 example, I want to search tag armpits and page 2
 ```
-https://whdzera.site/unofficial-danbooru-api/api?tags=armpits&2
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits&page=2
 ```
 
 ##### Get posts 
 
 ```
-https://whdzera.site/unofficial-danbooru-api/api/posts?id={number id}
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id={number id}
+```
+
+example
+```
+https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id=1182530
 ```
 
 output
