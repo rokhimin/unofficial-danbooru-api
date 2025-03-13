@@ -2,105 +2,251 @@
 layout: default
 ---
 
+  <!-- Hero -->
+  <section class="hero is-link is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">
+          Unofficial Danbooru API
+        </h1>
+        <h2 class="subtitle">
+          Simple and powerful Danbooru API 
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="section">
+    <div class="container">
+      <!-- About section -->
+      <div id="about" class="content">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title is-3">
+              <span class="icon-text">
+                <span class="icon has-text-link">
+                  <i class="fas fa-info-circle"></i>
+                </span>
+                <span>About</span>
+              </span>
+            </h2>
+            <p class="is-size-5">An unofficial Danbooru API that provides simple access to Danbooru's image database.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Usage section -->
+      <div id="usage" class="content mt-6">
+        <h2 class="title is-3">
+          <span class="icon-text">
+            <span class="icon has-text-link">
+              <i class="fas fa-code"></i>
+            </span>
+            <span>Usage</span>
+          </span>
+        </h2>
+        
+        <!-- Get Tags -->
+        <div class="card">
+          <div class="card-content">
+            <h3 class="title is-4">Get Tags</h3>
+            <div class="endpoint">
+              <p class="is-family-monospace">GET https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}</p>
+            </div>
+            <p>Example: Search tag <strong>armpits</strong></p>
+            <div class="endpoint">
+              <p class="is-family-monospace">GET https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits</p>
+            </div>
+            <p class="mb-3">Output:</p>
+            <div class="code-block">
+<pre><span class="json-key">{
+  "tag"</span>: <span class="json-string">"armpits"</span>,
+  <span class="json-key">"page"</span>: <span class="json-number">1</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">19</span>,
+  <span class="json-key">"pagination"</span>: {
+    <span class="json-key">"current_page"</span>: <span class="json-number">1</span>
+  },
+  <span class="json-key">"posts"</span>: [
+    {
+      <span class="json-key">"id"</span>: <span class="json-string">"8984674"</span>,
+      <span class="json-key">"title"</span>: <span class="json-string">"flora and trina (goddess of victory: nikke) drawn by young999999990"</span>,
+      <span class="json-key">"artist"</span>: <span class="json-string">"young999999990"</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://cdn.donmai.us/360x360/07/32/0732128dd2e73ff17018ae27196efa4c.jpg"</span>,
+      <span class="json-key">"sample_image"</span>: <span class="json-string">"https://cdn.donmai.us/sample/07/32/__flora_and_trina_goddess_of_victory_nikke_drawn_by_young999999990__sample-0732128dd2e73ff17018ae27196efa4c.jpg"</span>,
+      <span class="json-key">"original_image"</span>: <span class="json-string">"https://cdn.donmai.us/original/07/32/__flora_and_trina_goddess_of_victory_nikke_drawn_by_young999999990__0732128dd2e73ff17018ae27196efa4c.jpg"</span>,
+      <span class="json-key">"page_url"</span>: <span class="json-string">"https://danbooru.donmai.us/posts/8984674"</span>,
+      <span class="json-key">"published"</span>: <span class="json-string">""</span>,
+      <span class="json-key">"updated"</span>: <span class="json-string">"2025-03-12T10:19:26Z"</span>,
+      <span class="json-key">"tags"</span>: [<span class="json-string">"armpits"</span>]
+    }
+  ]
+}</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Get Pages -->
+        <div class="card mt-5">
+          <div class="card-content">
+            <h3 class="title is-4">Get Pages</h3>
+            <div class="endpoint">
+              <p class="is-family-monospace">GET https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}&page={number}</p>
+            </div>
+            <p>Example: Search tag <strong>armpits</strong> and page <strong>2</strong></p>
+            <div class="endpoint">
+              <p class="is-family-monospace">GET https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits&page=2</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Get Posts -->
+        <div class="card mt-5">
+          <div class="card-content">
+            <h3 class="title is-4">Get Posts</h3>
+            <div class="endpoint">
+              <p class="is-family-monospace">GET https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id={number id}</p>
+            </div>
+            <p>Example:</p>
+            <div class="endpoint">
+              <p class="is-family-monospace">GET https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id=1182530</p>
+            </div>
+            <p class="mb-3">Output:</p>
+            <div class="code-block">
+<pre><span class="json-key">{
+  "id"</span>: <span class="json-number">8984674</span>,
+  <span class="json-key">"created_at"</span>: <span class="json-string">"2025-03-12T06:19:26.600-04:00"</span>,
+  <span class="json-key">"uploader_id"</span>: <span class="json-number">1182530</span>,
+  <span class="json-key">"score"</span>: <span class="json-number">6</span>,
+  <span class="json-key">"source"</span>: <span class="json-string">"https://twitter.com/young999999990/status/1899733450980307003"</span>,
+  <span class="json-key">"md5"</span>: <span class="json-string">"0732128dd2e73ff17018ae27196efa4c"</span>,
+  <span class="json-key">"last_comment_bumped_at"</span>: <span class="json-null">null</span>,
+  <span class="json-key">"rating"</span>: <span class="json-string">"q"</span>,
+  <span class="json-key">"image_width"</span>: <span class="json-number">3584</span>,
+  <span class="json-key">"image_height"</span>: <span class="json-number">4096</span>,
+  <span class="json-key">"tag_string"</span>: <span class="json-string">"2girls :o absurdres animal_on_head armpits bird bird_on_head ..."</span>
+}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contributing section -->
+      <div id="contributing" class="content mt-6">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title is-3">
+              <span class="icon-text">
+                <span class="icon has-text-link">
+                  <i class="fas fa-users"></i>
+                </span>
+                <span>Contributing</span>
+              </span>
+            </h2>
+            <p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/rokhimin/unofficial-danbooru-api/" target="_blank">GitHub Repo</a>.</p>
+            <p>This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="https://www.contributor-covenant.org/" target="_blank">Contributor Covenant</a> code of conduct.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Development section -->
+      <div id="development" class="content mt-6">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title is-3">
+              <span class="icon-text">
+                <span class="icon has-text-link">
+                  <i class="fas fa-laptop-code"></i>
+                </span>
+                <span>Development</span>
+              </span>
+            </h2>
+            <p>To set up your environment, run:</p>
+            <div class="code-block">bundle install</div>
+            <p>Your setup just like a normal Jekyll site! To test your theme, run:</p>
+            <div class="code-block">bundle exec jekyll serve</div>
+            <p>and open your browser at <code>http://localhost:4000</code>. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test contents.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- License section -->
+      <div id="license" class="content mt-6">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title is-3">
+              <span class="icon-text">
+                <span class="icon has-text-link">
+                  <i class="fas fa-balance-scale"></i>
+                </span>
+                <span>License</span>
+              </span>
+            </h2>
+            <p>Available as open source under the terms of the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #f4f4f4;
+    .hero.is-primary {
+      background: linear-gradient(135deg, #ba1acf 0%, #3273dc 100%);
     }
-    h1, h2, h3 {
-        color: #333;
+    .code-block {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
     }
-    code {
-        background: #eee;
-        padding: 5px;
-        display: block;
-        white-space: pre-wrap;
+    .json-key {
+      color: #f92672;
     }
-    a {
-        color: #007BFF;
-        text-decoration: none;
+    .json-string {
+      color: #a6e22e;
     }
-    a:hover {
-        text-decoration: underline;
+    .json-number {
+      color: #ae81ff;
     }
-</style>
-<h1>ReadMe</h1>
+    .json-boolean {
+      color: #66d9ef;
+    }
+    .json-null {
+      color: #fd971f;
+    }
+    .endpoint {
+      background-color: #4b4b4b;
+      border-left: 4px solid #303ac5;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 1.5rem;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(10, 10, 10, 0.1);
+    }
+  </style>
 
-<h2>About</h2>
-<p>Unofficial Danbooru API host in GitHub Pages</p>
-<h2>Usage</h2>
-
-<h3>Get tags</h3>
-<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}</code>
-
-<p>Example, I want to search tag <strong>armpits</strong></p>
-<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits</code>
-
-<p>Output:</p>
-<code>{
-"tag": "armpits",
-"page": 1,
-"count": 19,
-"pagination": {
-"current_page": 1
-},
-"posts": [
-{
-  "id": "8984674",
-  "title": "flora and trina (goddess of victory: nikke) drawn by young999999990",
-  "artist": "young999999990",
-  "image_url": "https://cdn.donmai.us/360x360/07/32/0732128dd2e73ff17018ae27196efa4c.jpg",
-  "sample_image": "https://cdn.donmai.us/sample/07/32/__flora_and_trina_goddess_of_victory_nikke_drawn_by_young999999990__sample-0732128dd2e73ff17018ae27196efa4c.jpg",
-  "original_image": "https://cdn.donmai.us/original/07/32/__flora_and_trina_goddess_of_victory_nikke_drawn_by_young999999990__0732128dd2e73ff17018ae27196efa4c.jpg",
-  "page_url": "https://danbooru.donmai.us/posts/8984674",
-  "published": "",
-  "updated": "2025-03-12T10:19:26Z",
-  "tags": ["armpits"]
-}
-]
-}</code>
-
-<h3>Get pages</h3>
-<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags={name tag}&page={number}</code>
-
-<p>Example, search tag <strong>armpits</strong> and page <strong>2</strong>:</p>
-<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/api?tags=armpits&page=2</code>
-
-<h3>Get posts</h3>
-<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id={number id}</code>
-
-<p>Example:</p>
-<code>https://unofficial-danbooru-api-vercel.vercel.app/api/v1/posts?id=1182530</code>
-
-<p>Output:</p>
-<code>{
-"id": 8984674,
-"created_at": "2025-03-12T06:19:26.600-04:00",
-"uploader_id": 1182530,
-"score": 6,
-"source": "https://twitter.com/young999999990/status/1899733450980307003",
-"md5": "0732128dd2e73ff17018ae27196efa4c",
-"last_comment_bumped_at": null,
-"rating": "q",
-"image_width": 3584,
-"image_height": 4096,
-"tag_string": "2girls :o absurdres animal_on_head armpits bird bird_on_head ...",
-}</code>
-
-<h2>Contributing</h2>
-<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/rokhimin/unofficial-danbooru-api/">GitHub Repo</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="https://www.contributor-covenant.org/">Contributor Covenant</a> code of conduct.</p>
-
-<h2>Development</h2>
-<p>To set up your environment, run:</p>
-<code>bundle install</code>
-
-<p>Your setup just like a normal Jekyll site! To test your theme, run:</p>
-<code>bundle exec jekyll serve</code>
-<p>and open your browser at <code>http://localhost:4000</code>. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test contents.</p>
-
-<h2>License</h2>
-<p>Available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle navbar on mobile
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
